@@ -81,7 +81,10 @@ public class Description implements Serializable {
      * @param name the name of the test (a method name for test annotated with {@link org.junit.Test})
      * @param annotations meta-data about the test, for downstream interpreters
      * @return a <code>Description</code> named <code>name</code>
+     *
+     * @deprecated
      */
+    @Deprecated
     public static Description createTestDescription(Class<?> clazz, String name, Annotation... annotations) {
         return new Description(clazz, formatDisplayName(name, clazz.getName()), annotations);
     }
@@ -94,7 +97,10 @@ public class Description implements Serializable {
      * @param clazz the class of the test
      * @param name the name of the test (a method name for test annotated with {@link org.junit.Test})
      * @return a <code>Description</code> named <code>name</code>
+     *
+     * @deprecated
      */
+    @Deprecated
     public static Description createTestDescription(Class<?> clazz, String name) {
         return new Description(clazz, formatDisplayName(name, clazz.getName()));
     }
@@ -119,7 +125,10 @@ public class Description implements Serializable {
      *
      * @param testClass A {@link Class} containing tests
      * @return a <code>Description</code> of <code>testClass</code>
+     *
+     * @deprecated
      */
+    @Deprecated
     public static Description createSuiteDescription(Class<?> testClass) {
         return new Description(testClass, testClass.getName(), testClass.getAnnotations());
     }
@@ -142,10 +151,21 @@ public class Description implements Serializable {
     private final Annotation[] fAnnotations;
     private volatile /* write-once */ Class<?> fTestClass;
 
-    private Description(Class<?> clazz, String displayName, Annotation... annotations) {
+    /**
+     *
+     * @deprecated
+     */
+    @Deprecated
+    protected Description(Class<?> clazz, String displayName, Annotation... annotations) {
         this(clazz, displayName, displayName, annotations);
     }
 
+
+    /**
+     *
+     * @deprecated
+     */
+    @Deprecated
     private Description(Class<?> clazz, String displayName, Serializable uniqueId, Annotation... annotations) {
         if ((displayName == null) || (displayName.length() == 0)) {
             throw new IllegalArgumentException(
