@@ -15,6 +15,8 @@ import org.junit.runner.notification.RunNotifierTest;
 import org.junit.runner.notification.SynchronizedRunListenerTest;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import org.junit.runners.model.FrameworkFieldTest;
+import org.junit.runners.model.FrameworkMethodTest;
 import org.junit.tests.assertion.AssertionTest;
 import org.junit.tests.assertion.ComparisonFailureTest;
 import org.junit.tests.assertion.MultipleFailureExceptionTest;
@@ -74,6 +76,7 @@ import org.junit.tests.manipulation.FilterableTest;
 import org.junit.tests.manipulation.SingleMethodTest;
 import org.junit.tests.manipulation.SortableTest;
 import org.junit.tests.running.classes.BlockJUnit4ClassRunnerTest;
+import org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest;
 import org.junit.tests.running.classes.EnclosedTest;
 import org.junit.tests.running.classes.IgnoreClassTest;
 import org.junit.tests.running.classes.ParameterizedTestTest;
@@ -130,6 +133,7 @@ import org.junit.tests.validation.ValidationTest;
         ParameterizedTestMethodTest.class,
         InitializationErrorForwardCompatibilityTest.class,
         SingleMethodTest.class,
+        ClassLevelMethodsWithIgnoredTestsTest.class,
         ValidationTest.class,
         UserStopTest.class,
         SortableTest.class,
@@ -194,6 +198,8 @@ import org.junit.tests.validation.ValidationTest;
         JUnitCommandLineParseResultTest.class,
         FilterFactoriesTest.class,
         CategoryFilterFactoryTest.class,
+        FrameworkFieldTest.class,
+        FrameworkMethodTest.class,
         JUnitCoreTest.class
 })
 public class AllTests {
